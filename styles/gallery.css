@@ -1,0 +1,269 @@
+body.mural,
+body.sculptures,
+body.chess,
+body:not(.home):not(.works):not(.about):not(.installation) {
+  background: #050507;
+}
+
+.container {
+  width: min(1180px, 100%);
+  margin: 0 auto;
+  padding: 124px 22px 24px;
+}
+
+body.chess .container {
+  width: min(1120px, calc(100% - 44px));
+}
+
+body.chess .image-gallery {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 0;
+  border: 0;
+  background: transparent;
+  columns: initial;
+}
+
+body.chess .img-container-3x {
+  min-height: 260px;
+  margin: 0;
+  display: block;
+  border: 0;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: #050507;
+}
+
+body.chess .img-container-3x:nth-child(1) {
+  grid-column: span 4;
+  grid-row: span 2;
+  min-height: 520px;
+}
+
+body.chess .img-container-3x:nth-child(2) {
+  grid-column: span 2;
+}
+
+body.chess .img-container-3x:nth-child(3) {
+  grid-column: span 2;
+}
+
+body.chess .img-container-3x:nth-child(4),
+body.chess .img-container-3x:nth-child(5),
+body.chess .img-container-3x:nth-child(6) {
+  grid-column: span 2;
+}
+
+.image-gallery {
+  columns: 4 210px;
+  column-gap: 12px;
+}
+
+.img-container,
+.img-container-3x {
+  position: relative;
+  width: 100%;
+  margin: 0 0 12px;
+  display: inline-block;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.04);
+  box-shadow: none;
+  cursor: zoom-in;
+  break-inside: avoid;
+}
+
+.img-container img,
+.img-container-3x img {
+  width: 100%;
+  height: auto;
+  min-height: 0;
+  object-fit: contain;
+  object-position: center;
+  background: #050507;
+  filter: saturate(0.92) contrast(1.04);
+  transition: transform 0.65s ease, filter 0.65s ease;
+}
+
+body.chess .img-container-3x img {
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  object-position: center;
+  background: #050507;
+  transition: transform 0.65s ease, filter 0.65s ease, opacity 0.65s ease;
+}
+
+body.chess .img-container-3x::after {
+  display: none;
+}
+
+body.chess .img-container-3x:hover img {
+  filter: saturate(1.08) contrast(1.05);
+  opacity: 0.96;
+  transform: scale(1.025);
+}
+
+.img-container::after,
+.img-container-3x::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to top, rgba(0, 0, 0, 0.55), transparent 46%),
+    radial-gradient(circle at 25% 18%, rgba(255, 255, 255, 0.18), transparent 28%);
+  opacity: 0;
+  transition: opacity 0.45s ease;
+}
+
+.img-container:hover img,
+.img-container-3x:hover img {
+  filter: saturate(1.18) contrast(1.08);
+  transform: scale(1.018);
+}
+
+.img-container:hover::after,
+.img-container-3x:hover::after {
+  opacity: 1;
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 84px 70px 40px;
+  background: rgba(2, 2, 4, 0.9);
+  backdrop-filter: blur(22px);
+}
+
+.modal-overlay.is-active {
+  display: flex;
+}
+
+.modal {
+  position: relative;
+  width: min(100%, 1080px);
+  display: grid;
+  place-items: center;
+}
+
+.modal-content {
+  max-width: 100%;
+  max-height: calc(100vh - 150px);
+  width: auto;
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  box-shadow: 0 40px 120px rgba(0, 0, 0, 0.72);
+}
+
+.close,
+.prev,
+.next {
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.08);
+  cursor: pointer;
+  backdrop-filter: blur(14px);
+  transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+}
+
+.close:hover,
+.prev:hover,
+.next:hover {
+  border-color: rgba(121, 230, 255, 0.58);
+  background: rgba(121, 230, 255, 0.12);
+  transform: scale(1.06);
+}
+
+.close {
+  position: fixed;
+  top: 28px;
+  right: 28px;
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  font-size: 24px;
+  line-height: 1;
+}
+
+.prev,
+.next {
+  position: fixed;
+  top: 50%;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  font-size: 20px;
+}
+
+.prev {
+  left: 28px;
+}
+
+.next {
+  right: 28px;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 118px 14px 20px;
+  }
+
+  .image-gallery {
+    columns: 2 140px;
+    column-gap: 10px;
+  }
+
+  body.chess .container {
+    width: calc(100% - 28px);
+  }
+
+  body.chess .image-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  body.chess .img-container-3x,
+  body.chess .img-container-3x:nth-child(1),
+  body.chess .img-container-3x:nth-child(2),
+  body.chess .img-container-3x:nth-child(3),
+  body.chess .img-container-3x:nth-child(4),
+  body.chess .img-container-3x:nth-child(5),
+  body.chess .img-container-3x:nth-child(6) {
+    grid-column: auto;
+    grid-row: auto;
+    min-height: 260px;
+    margin-bottom: 0;
+  }
+
+  .img-container,
+  .img-container-3x {
+    margin-bottom: 10px;
+  }
+
+  .modal-overlay {
+    padding: 86px 16px 80px;
+  }
+
+  .prev,
+  .next {
+    top: auto;
+    bottom: 18px;
+  }
+
+  .prev {
+    left: calc(50% - 64px);
+  }
+
+  .next {
+    right: calc(50% - 64px);
+  }
+}

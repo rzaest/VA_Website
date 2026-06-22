@@ -1,0 +1,305 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    background-color: #eeeeee;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Raleway', sans-serif;
+}
+
+p {
+    font-family: 'Raleway', sans-serif;
+}
+
+a{
+    text-decoration: none;
+    color: #f0ecece9;
+}
+
+img{
+    object-fit: cover;
+    object-position: top;
+}
+
+nav{
+    height: 60px;
+    padding: 20px 40px;
+    background-color: #000000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 600;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000; 
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3); 
+}
+
+nav .logo{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+nav .logo img{
+    width: 77px;
+    height: 40px;
+}
+
+nav .logo a{
+    margin-left: 10px;
+    color: #f0ecece9;
+    font-size: 16px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.2);
+}
+
+nav .nav-links{
+    margin-right: 10px;
+    display: flex;
+    gap: 16px;
+}
+
+nav .nav-links a{
+    position: relative; 
+    transition: color 0.3s ease;
+}
+
+nav .nav-links a::after{
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 0;
+    bottom: -5px; 
+    left: 0;
+    background-color: #f0ecec; 
+    transition: width 0.3s ease;
+}
+
+nav .nav-links a:hover::after,
+nav .nav-links a.selected::after{
+    width: 100%;
+}
+
+nav .nav-links a:hover,
+nav .nav-links a.selected{
+    color: #f0ecec; 
+}
+
+
+
+
+html{
+    scroll-behavior: smooth;
+}
+
+.sec-02 {
+    position: relative;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    padding: 50px 50px;
+    color: #2F2E2E;
+}
+
+.container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.content .text-box{
+    z-index: 222;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    margin-left: 70px;
+    padding: 40px;
+    max-width: 600px;
+    border: 1px solid rgba(32, 30, 30, 0.1);
+    border-radius: 10px;
+    transform: translate(-80px, 50px);
+}
+
+.content .text-box h3{
+    font-size: 2em;
+    margin-bottom: 10px;
+
+}
+
+.section-title {
+    margin-top: 20px;
+    font-size: 3em;
+    margin-bottom: 15px;
+    font-style: italic;
+    padding: 20px;
+}
+
+.section-subtitle {
+    list-style-type: none;
+    text-align: center;
+    margin-bottom: 45px;
+    font-style: italic;
+    font-size: 15px;
+}
+
+
+.info-title{
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+.info{
+    width: 700px;
+    margin-left: 50px;
+
+}
+
+/* .media-info{
+    width: 100%;
+    margin-left: 50px;
+}
+
+.media-info li{
+    list-style: none;
+    font-size: 14px;
+}
+.media-info li:not(:last-child){
+margin-bottom: 20px;
+} */
+
+.sec-03{
+    /* position: relative; */
+    display: flex;
+    padding: 50px 50px;
+    color: #2F2E2E;
+}
+
+.ship{
+    gap: 350px;
+    display: flex;
+    margin-left: 50px;
+}
+
+.ship-pic{
+    display: flex;
+    width: 630px;
+    height: 630px;
+    align-items: left;
+}
+
+.ship .ship-pic img{
+    height: inherit;
+    width: inherit;
+}
+
+.descriptor {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    text-align: justify;
+}
+
+.des-title {
+    font-style: italic;
+}
+
+
+.sec-04{
+    margin-top: 25px;
+    display: flex;
+    padding: 50px 50px;
+    color: #2F2E2E;
+}
+
+.installation{
+    gap: 200px;
+    display: flex;
+    margin-left: 50px;
+}
+
+.instal-pic{
+    display: flex;
+    width: 630px;
+    height: 630px;
+    align-items: left;
+}
+
+.installation .instal-pic img{
+    height: inherit;
+    width: inherit;
+}
+
+.description {
+    margin-top: 10px;
+}
+
+.sec-05{
+    margin-top: 40px;
+    display: flex;
+    padding: 50px 50px;
+    color: #2F2E2E;
+}
+
+.game{
+    gap: 150px;
+    display: flex;
+    margin-left: 50px;
+}
+
+.game-pic{
+    display: flex;
+    width: max-content;
+    height: max-content;
+    align-items: left;
+}
+
+.game .game-pic img{
+    height: 420px;
+    width: inherit;
+    
+}
+
+footer{
+    margin-top: 50px;
+    padding:30px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #2F2E2E;
+}
+
+footer .socials{
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    margin-bottom: 15px;
+}
+
+footer .socials i{
+    color: #2F2E2E;
+    font-size: 30px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+footer .socials i:hover{
+    color: #2e345e;
+}
+
+footer p{
+    font-size: 11px;
+}
